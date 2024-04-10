@@ -1,0 +1,45 @@
+                                FRONTEND            BACKEND
+
+CLIENTES
+    Cadastrar			OK
+    Exibir			OK (implementar editar e deletar)
+    Alterar
+    Excluir
+    Contratar produto
+
+AGÊNCIAS
+    Cadastrar			OK
+    Exibir			OK (implementar editar)
+    Alterar
+    Excluir
+
+PRODUTOS
+    Cadastrar			OK
+    Exibir			OK
+    Alterar
+    Excluir
+    Cadastrar produto em agência
+
+
+ESTRUTURAS DAS CLASSES:
+AGÊNCIA
+    endereço
+    cidade
+    uf
+    cod_ag → autoincrement
+
+CLIENTE
+    nome
+    cpf
+    endereço
+    cidade
+    uf
+    telefone
+    email
+    senha
+    cod_cli → autoincrement
+    cod_ag
+
+PRODUTO
+    cod_prod → autoincrement
+    nome

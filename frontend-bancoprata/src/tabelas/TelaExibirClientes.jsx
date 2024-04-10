@@ -1,19 +1,14 @@
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap';
 import Pagina from '../templates/Pagina';
 import { LinkContainer } from 'react-router-bootstrap';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { hostname, port } from '../dados/dados';
+import listaClientes from '../dados/mockClientes';
 
 const urlCliente = `http://${hostname}:${port}/cliente`;
 
 export default function TelaExibirClientes(props) {
-  const [listaClientes, setListaClientes] = useState([]);
-  useEffect(() => {
-    fetch(urlCliente)
-      .then((resp) => resp.json())
-      .then((data) => setListaClientes(data))
-      .catch((erro) => console.error('Erro ao buscar clientes', erro));
-  });
+  const [clientes, setClientes] = useState([]);
 
   return (
     <Pagina>
@@ -41,7 +36,7 @@ export default function TelaExibirClientes(props) {
               return (
                 //   necessário identificar cada linha da tabela usando "key"
                 // key → ajuda o React na rendereização dos componentes no DOM virtual
-                <tr key={cliente.cod_cli}>
+                <tr key={cliente.cpf}>
                   <td>{cliente.cod_cli}</td>
                   <td>{cliente.cod_ag}</td>
                   <td>{cliente.nome}</td>
